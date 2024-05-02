@@ -1,53 +1,61 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en-ca">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Movie age rating" />
+  <meta charset="utf-8" />
+  <meta name="description" content="Watchable movies, in JS" />
   <meta name="keywords" content="mths, icd2o" />
   <meta name="author" content="Clara Tyman" />
-  <title>movie age rating</title>
-  <link rel="canonical" href="https://github.com/Liya-Getachew/ICS2O-Unit5-03-JS" />
-  <link rel="manifest" href="site.webmanifest" />
-  <link rel="stylesheet" href="./css/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-deep_purple.min.css" />
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_purple-light_green.min.css" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <title>Watchable movies, in JS</title>
 </head>
-  <title>movie age rating</title>
-  <body>
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <script src="./js/script.js"></script>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title"><strong>movie age rating</strong></span>
+<body>
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script src="./js/script.js"></script>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Watchable movies, in JS</span>
+      </div>
+    </header>
+    <div class="content">
+      <div class="row">
+        <div class="column">
+          <br />
+          <p>
+            Just enter your age below to find out what movie tyoe you can watch!
+          </p>
+          <!-- Numeric Textfield with Floating Label -->
+          <form action="#">
+            Your age:
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="user-age" />
+              <label class="mdl-textfield__label" for="sample4">Enter here</label>
+              <span class="mdl-textfield__error">Input is not a number!</span>
+            </div>
+            <!-- Accent-colored raised button with ripple -->
+            <br />
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+              onclick="myButtonClicked()">
+              Movie Type
+            </button>
+          </form>
+          <div id="movie-type"></div>
+          <div id="end-sentence"></div>
         </div>
-      </header>
-      <main class="mdl-layout__content">
-        <p id="text">
-          What to know what movies you can watch? Input your age in the "My
-          age:" box and I can tell you!
-        </p>
-        <img src="./images/movie_ratings.jpeg" alt="Computer" width="350" height="300" />
-        <form action="#" class="value">
-          My age:
-          <div class="mdl-textfield mdl-js-textfield">
-            <input class="mdl-textfield__input" type="text" step="any" pattern="-?[0-9]*(\.[0-9]+)?" id="age"
-              placeholder="insert age" aria-label="my age" />
-            <span class="mdl-textfield__error">Input is not an age!</span>
-          </div>
-        </form>
-        <div id="watchable">My watchable movies:</div>
-        <!-- Raised button with ripple -->
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
-          onclick="ageRating()">
-          movie rating
-        </button>
-      </main>
+        <div class="column">
+          <br />
+          <br />
+          <img src="./images/movie_ratings.jpeg" alt="movie rating system image" />
+        </div>
+      </div>
     </div>
-  </body>
-  </html>
+  </div>
+</body>
+</html>

@@ -1,30 +1,26 @@
-// Copyright (c) 2024 Clara Tyman All rights reserved
+// Copyright (c) 2024 All rights reserved
 //
-// Created by: Clara Tyman
-// Created on: Apr 2024
+// Created by: Clara
+// Created on: April 2024
 // This file contains the JS functions for index.html
 
-"use strict"
+function myButtonClicked() {
+  // variable, user input
+  const userAge = parseInt(document.getElementById("user-age").value)
 
-/**
- * This function displays the user's movie age rating.
- */
-function ageRating() {
-  // input
-  const age = parseInt(document.getElementById("age").value)
-
-  // process
-  if (age >= 17) {
-    document.getElementById("watchable").innerHTML =
-      "You're old enough to watch any R movie alone."
-  } else if (age >= 13) {
-    document.getElementById("watchable").innerHTML =
-      "You can watch PG-13 movies alone."
-  } else if (age >= 5) {
-    document.getElementById("watchable").innerHTML =
-      "You're pretty young... let's stick to G or PG for now."
+  if (userAge >= 17) {
+    // output
+    document.getElementById("movie-type").innerHTML = "You can see an R rated movie alone."
+  } else if (userAge >= 13) {
+    // output
+    document.getElementById("movie-type").innerHTML = "You can see a PG-13 movie alone."
+  } else if (userAge >= 5) {
+    // output
+    document.getElementById("movie-type").innerHTML = "You can see a G or PG movie alone."
   } else {
-    document.getElementById("watchable").innerHTML =
-      "I'm surprised you even found this site... shouldn't you be napping?"
+    // output
+    document.getElementById("movie-type").innerHTML = "Uh. You're too young for most things."
   }
+  // output
+  document.getElementById("end-sentence").innerHTML = "Thanks for verifying your age!"
 }
