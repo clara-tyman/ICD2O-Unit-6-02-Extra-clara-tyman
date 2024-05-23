@@ -4,7 +4,25 @@
 // Created on: April 2024
 // This file contains the JS functions for index.html
 
-function myButtonClicked() {
+'use strict'
+
+/**
+ * Check service worker.
+ */
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register("/ICD2O-Unit-6-02-Extra-clara-tyman/sw.js", {
+    scope: "/ICD2O-Unit-6-02-Extra-clara-tyman/",
+  })
+}
+
+/**
+ * This function updates the cookie count.
+ */
+function populateStorage() {
+  localStorage.setItem("userAge", document.getElementById("userAge").value);
+}
+
+function Save() {
   // variable, user input
   const userAge = parseInt(document.getElementById("user-age").value)
 
